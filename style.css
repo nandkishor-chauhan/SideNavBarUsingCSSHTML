@@ -49,10 +49,15 @@ body.dark{
     left: 0;
     height: 100%;
     width: 250px;
-    padding: 10px 14px;
+    overflow-y: auto;
+    scrollbar-width: none;
     background: var(--sidebar-color);
     transition: var(--tran-05);
-    z-index: 100;
+    z-index: 200;
+}
+
+sidebar::-webkit-scrollbar {
+	display: none;
 }
 
 .sidebar.close{
@@ -105,7 +110,11 @@ body.dark{
 
 
 .sidebar header{
-    position: relative;
+	position: sticky;
+	top: 0;
+	left: 0;
+    padding: 10px;
+    background: var(--primary-color-light);
 }
 
 .sidebar .image-text img{
@@ -132,7 +141,7 @@ header .image-text .header-text{
 .sidebar header .toggle{
     position: absolute;
     top: 50%;
-    right: -25px;
+    right: -2px;
     transform: translateY(-50%) rotate(180deg);
     height: 25px;
     width: 25px;
@@ -201,6 +210,7 @@ body.dark .sidebar li a:hover .text{
 .sidebar .menu-bar{
     height: 95%;
     display: flex;
+    padding: 0px 14px;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -293,14 +303,8 @@ body.dark .switch::before{
     width: calc(100% - 88px);
 }
 
-@media screen and (max-width: 768px) {
-	.content {
-		position: relative;
-		width: calc(100% - 60px);
-		transition: all .3s ease;
-	}
-	nav .nav-link,
-	nav .divider {
-		display: none;
-	}
-}
+
+
+    footer {
+        background: var(--sidebar-color);
+    }
